@@ -1,0 +1,6 @@
+DSH Office incorporates VibeOffice by tcchen2026 and its contributors.
+Upstream: https://github.com/tcchen2026/VibeOffice
+Revision: 32ff53a5da0e75ebac11acdb0251cd3d8c7bf408
+VibeOffice is licensed under Apache License 2.0. Its original source and bundled
+third-party notices are retained under vendor/. The DSH adapter is separate;
+embedded HTML responses add the adapter scripts and a restricted CSP.

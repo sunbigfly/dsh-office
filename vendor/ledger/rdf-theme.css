@@ -1,0 +1,11 @@
+@import url("../common/rdf-theme.css");
+
+.fbar, .tabrow, .tabnav, .sb, .sb-corner { background: #f8f9fa; }
+.fbar, .namebox, .namebox button, .fb-input, .tabrow { border-color: var(--tb-border); }
+.namebox button { background: #f1f3f4; }
+.stab:not(.on):not(.sel)::after { background: var(--tabc, #f1f3f4); }
+.tabsplit { background: #e8eaed; border-color: var(--tb-border); }
+.af-btn, .dv-btn { background: #f8f9fa; border-color: var(--tb-border); box-shadow: none; }
+.af-btn.on { border-color: #4285f4; background: #e8f0fe; }
+.af-btn.on .dd-arrow { border-top-color: #4285f4; }
+.ppv { background: var(--canvas); }

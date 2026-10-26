@@ -1,0 +1,69 @@
+/* RDF surfaces and interaction colors; keep the original compact control geometry. */
+:root, :root[data-look] {
+  --tb-a: #fff; --tb-b: #f8f9fa; --tb-c: #f1f3f4;
+  --dock-a: #f8f9fa; --dock-b: #f8f9fa;
+  --tb-border: #dadce0; --grip: #9aa0a6;
+  --hot-a: #e8f0fe; --hot-b: #e8f0fe; --hot-border: #a8c7fa;
+  --press-a: #d2e3fc; --press-b: #d2e3fc;
+  --chk-a: #e8f0fe; --chk-b: #d2e3fc;
+  --menu-border: #dadce0; --menu-hot: #e8f0fe;
+  --sep-dark: #dadce0; --sep-light: #fff;
+  --pane-a: #fff; --pane-b: #f1f3f4; --pane-ink: #3c4043; --pane-link: #1a73e8;
+  --canvas: #f1f3f4; --ink: #3c4043; --muted: #5f6368;
+  --dlg: #fff; --dlg-ink: #3c4043; --field-border: #dadce0; --btn-border: #dadce0;
+  --sel: #4285f4; --ruler: #fff; --ruler-off: #e8eaed;
+  /* New upstream look tokens use the same RDF palette. */
+  --tb-edge: #dadce0; --chrome-line: #dadce0; --combo-border: #dadce0; --combo-sep: #dadce0;
+  --hint-ink: #5f6368; --menu-open: #e8f0fe; --menu-face: #fff;
+  --head-ink: #3c4043; --head-bg: #f8f9fa; --head-line: #dadce0; --key-ink: #5f6368;
+  --pane-line: #dadce0; --box-line: #dadce0; --card-line: #dadce0; --row-line: #f1f3f4; --group-bg: #f8f9fa;
+  --ink-2: #3c4043; --ink-3: #3c4043; --ink-4: #5f6368; --ink-5: #5f6368; --ink-key: #3c4043;
+  --work: #f1f3f4; --sel-line: #4285f4; --sel-soft: #d2e3fc; --sel-pale: #e8f0fe; --sel-pale-2: #e8f0fe;
+  --sheet-grid: #dadce0; --sheet-hdr-a: #f8f9fa; --sheet-hdr-b: #f1f3f4;
+  --hdr-a: #f8f9fa; --hdr-b: #f1f3f4; --hdr-line: #dadce0; --hdr-ink: #3c4043;
+  --hdr-sel-a: #e8f0fe; --hdr-sel-b: #d2e3fc; --hdr-sel-line: #a8c7fa; --hdr-all-a: #e8f0fe; --hdr-all-b: #d2e3fc;
+  --cell-sel: rgba(66, 133, 244, 0.15); --cell-sel-border: #4285f4;
+  --rb-bg: #f8f9fa; --rb-panel: #fff; --rb-line: #dadce0; --rb-tab-ink: #3c4043; --rb-tab-on-ink: #1a73e8; --rb-tab-hot: #e8f0fe;
+  --rb-label-ink: #5f6368; --rb-ctx: #1a73e8; --rb-ctx-bg: #e8f0fe; --rb-file-ink: #1a73e8;
+  --sb-sep: #dadce0; --sb-sep-hi: #fff; --flag-off: #9aa0a6;
+  --btn-a: #fff; --btn-b: #fff; --btn-hot-b: #e8f0fe; --btn-press-a: #d2e3fc; --btn-press-b: #d2e3fc;
+  --tab-a: #fff; --tab-b: #f8f9fa; --grp-line: #dadce0; --face-2: #f8f9fa; --face-2-line: #dadce0;
+  --thumb-line: #dadce0; --thumb-on: #4285f4; --thumb-sel: #a8c7fa; --page-shadow: #dadce0;
+}
+
+
+.menubar::before, .toolbar > .tb-grip { display: none; }
+.cmdbars, .toolbar, .drawrow, .viewbar, .statusbar,
+.ruler-h, .ruler-v, .r-corner, .docmap, .revpane, .rp-head,
+.taskpane, .tp-box, .sf-list, .rf-tree { border-color: var(--tb-border); }
+.toolbar, .cmdbars, .drawrow, .viewbar, .statusbar { background: var(--dock-b); }
+.toolbar { background: #f1f3f4; border-radius: 0; }
+.combo, .combo-btn, .splitter.h { border-color: var(--tb-border); }
+.taskpane { background: #f8f9fa; }
+.tp-head { background: #f1f3f4; }
+.mb-item.open { background: var(--menu-hot); }
+.menu { background: #fff; box-shadow: 0 4px 12px #3c404326; }
+.sb-cell { border-color: var(--tb-border); box-shadow: none; }
+.sb-cell.flag { color: #9aa0a6; }
+.sb-cell.flag.on { color: var(--pane-link); }
+.pg { box-shadow: 0 0 0 1px #dadce0, 0 2px 6px #3c404326; }
+.dlg { border-color: var(--tb-border); box-shadow: 0 4px 20px #3c404333; }
+.dlg-title, .floatbar .fb-title { background: #f1f3f4; color: var(--ink); text-shadow: none; }
+.dlg-x, .dlg-help { background: #f8f9fa; color: var(--muted); border-color: var(--tb-border); box-shadow: none; }
+.btn { background: #fff; box-shadow: none; }
+.btn:hover:not(:disabled), .btn:active:not(:disabled) { background: var(--menu-hot); box-shadow: none; }
+.btn.primary { background: #4285f4; color: #fff; border-color: #4285f4; box-shadow: none; }
+.btn.primary:hover:not(:disabled) { background: #1a73e8; }
+.rdf-office-controls button { background: #fff !important; color: var(--ink); }
+.rdf-office-controls button:hover { background: var(--menu-hot) !important; }
+.menu.combo-list.fonts { width: 360px; max-width: calc(100vw - 8px); max-height: min(320px, calc(100vh - 80px)); }
+.menu.combo-list.fonts .m-item { grid-template-columns: 22px minmax(0, 1fr) 100px; min-height: 30px; }
+.menu.combo-list.fonts .m-lbl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.menu.combo-list.fonts .m-key, .menu.combo-list.fonts .m-sub { display: none; }
+.rdf-font-preview { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: right; padding-right: 8px; font-size: 15px; color: var(--muted); }
+.rdf-font-empty { padding: 16px; text-align: center; color: var(--muted); }
+.rdf-font-group { padding: 5px 8px 5px 22px; border-bottom: 1px solid var(--tb-border); background: #f8f9fa; color: var(--muted); font-size: 11px; font-weight: 600; }
+.rdf-font-group:not(:first-child) { border-top: 1px solid var(--tb-border); margin-top: 4px; }
+.rdf-format-row { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.rdf-format-row > .toolbar { flex: none; max-width: none; }
+#menurow > #tb-standardRight { margin-left: 0; max-width: none; }

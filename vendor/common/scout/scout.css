@@ -1,0 +1,25 @@
+/* Scout, the assistant (scout.js, assistant.js): his box on the window, his speech balloon and its choices.
+   Chrome colours and the font are the look's settings (common/looks.css), as a tooltip's; the character
+   keeps his own colours in every look. Above the document and task pane, under menus and dialogs. */
+.scout-agent { position: fixed; left: 0; top: 0; z-index: 900; width: var(--scout-w, 154px); touch-action: none; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; }
+.scout-agent.is-inline { position: relative; left: auto; top: auto; z-index: auto; margin: 0 auto; }
+.scout-agent svg { display: block; width: 100%; height: auto; overflow: visible; }
+.scout-agent.is-dragging svg { cursor: move; }
+.scout-agent.is-hidden { pointer-events: none; }
+.scout-agent:focus-visible { outline: 1px dotted var(--ink); outline-offset: 2px; }
+
+.scout-balloon { position: absolute; z-index: 2; box-sizing: border-box; width: max-content; max-width: min(240px, calc(100vw - 24px)); padding: 7px 10px 8px; background: var(--tip-bg); color: var(--ink); border: 1px solid var(--tip-line); border-radius: 8px; box-shadow: 2px 3px 8px var(--tip-shadow-c); font: var(--ui-size)/1.45 var(--ui-font); text-align: left; overflow-wrap: break-word; opacity: 0; transform: translateY(4px) scale(.98); transform-origin: var(--scout-tip, 50%) 100%; transition: opacity .16s ease, transform .16s ease; pointer-events: none; cursor: default; }
+.scout-balloon.is-on { opacity: 1; transform: none; pointer-events: auto; }
+.scout-balloon::before, .scout-balloon::after { content: ""; position: absolute; left: var(--scout-tip, 50%); border-style: solid; border-color: transparent; }
+.scout-balloon::before { top: 100%; border-width: 10px 8px 0; border-top-color: var(--tip-line); margin-left: -8px; }
+.scout-balloon::after { top: 100%; border-width: 9px 7px 0; border-top-color: var(--tip-bg); margin-left: -7px; margin-top: -1px; }
+.scout-balloon.is-below { transform-origin: var(--scout-tip, 50%) 0; }
+.scout-balloon.is-below::before { top: auto; bottom: 100%; border-width: 0 8px 10px; border-bottom-color: var(--tip-line); border-top-color: transparent; }
+.scout-balloon.is-below::after { top: auto; bottom: 100%; border-width: 0 7px 9px; border-bottom-color: var(--tip-bg); border-top-color: transparent; margin-top: 0; margin-bottom: -1px; }
+.scout-balloon.has-choices { max-width: min(260px, calc(100vw - 24px)); }
+.scout-choices { display: grid; gap: 1px; margin: 6px -5px -3px; }
+.scout-choices[hidden] { display: none; }
+.scout-choices button { display: flex; align-items: center; gap: 8px; width: 100%; padding: 3px 5px; border: 0; border-radius: 3px; background: none; color: var(--tip-link); font: inherit; text-align: left; cursor: pointer; }
+.scout-choices button::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--tip-link); }
+.scout-choices button:hover, .scout-choices button:focus-visible { background: var(--menu-hot); outline: none; text-decoration: underline; text-underline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .scout-balloon { transition: none; } }

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="16 16 96 96" fill="none">
+  <title>DSH Office</title>
+  <desc>A blue-violet folded document with an open counter and a transparent background.</desc>
+  <defs>
+    <linearGradient id="page" x1="32" y1="28" x2="88" y2="102" gradientUnits="userSpaceOnUse"><stop stop-color="#9CC9FF"/><stop offset=".52" stop-color="#7BA6F4"/><stop offset="1" stop-color="#7770E8"/></linearGradient>
+    <linearGradient id="fold" x1="73" y1="28" x2="90" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#D4E6FF"/><stop offset="1" stop-color="#A6BCFA"/></linearGradient>
+  </defs>
+  <path fill-rule="evenodd" d="M45 28H73L96 51V83C96 93.493 87.493 102 77 102H45C34.507 102 26 93.493 26 83V47C26 36.507 34.507 28 45 28ZM50 46H72A7 7 0 0 1 79 53V78A7 7 0 0 1 72 85H50A7 7 0 0 1 43 78V53A7 7 0 0 1 50 46Z" fill="url(#page)"/>
+  <path d="M73 28V42C73 46.971 77.029 51 82 51H96L73 28Z" fill="url(#fold)"/>
+</svg>

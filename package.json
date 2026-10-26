@@ -1,0 +1,16 @@
+{
+  "name": "dsh-office",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "在 DSH 工作区侧栏预览、编辑并保存 Word、Excel 和 PowerPoint 文件。",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/sunbigfly/dsh-office#readme",
+  "repository": { "type": "git", "url": "https://github.com/sunbigfly/dsh-office.git" },
+  "bugs": { "url": "https://github.com/sunbigfly/dsh-office/issues" },
+  "keywords": ["dsh", "office", "docx", "xlsx", "pptx", "document-editor", "vibeoffice"],
+  "engines": { "node": ">=22", "dsh": ">=0.2.1-rc.2 <0.3.0" },
+  "exports": { ".": "./index.js", "./client": "./client.js", "./icon": "./assets/icon.svg", "./locale/*.json": "./locale/*.json", "./package.json": "./package.json" },
+  "files": ["index.js", "files.js", "client.js", "cordis.patch.yml", "embed/", "vendor/", "locale/", "assets/", "UPSTREAM.json", "ADAPTATIONS.json", "README.md", "docs/usage.md", "LICENSE", "NOTICE"],
+  "scripts": { "check": "node --check index.js && node --check files.js && node --check client.js && node --check embed/bridge.js && node --check embed/bootstrap.js && node --check embed/menu-layout.js", "test": "node --test tests/*.test.js", "release:index": "node scripts/build-market-index.mjs" },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" }, "client": { "platform": "web", "inject": ["@deepseek-ai/dsh-client-ui-sidebar-right", "@deepseek-ai/dsh-client-ui-sidebar-documentpreview"] } }
+}

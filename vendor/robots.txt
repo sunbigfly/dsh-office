@@ -1,0 +1,5 @@
+# Every page may be crawled; the apps' scripts and styles too, so search engines can draw the pages
+User-agent: *
+Allow: /
+
+Sitemap: https://vibeoffice.work/sitemap.xml

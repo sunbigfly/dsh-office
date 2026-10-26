@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' data: blob: https://vibeoffice.work ipc: https://ipc.localhost; worker-src 'self'; manifest-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Update VibeOffice</title>
+<link rel="icon" href="../icons/icon.svg" type="image/svg+xml">
+<style>
+  /* The update page (the desktop app's Update and Check for updates buttons open it), in English: the night before
+     daybreak, a new version as the new day. The sky is a picture, so its colours are its own, in every look (as the
+     icons' are). Each system its own steps (updater.js, from the app's current_platform); without one, all of them. */
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; min-height: 100%; display: grid; place-items: center; padding: 32px 16px 120px; overflow-x: hidden;
+    background: linear-gradient(#050a1c 0%, #0b1533 42%, #182651 66%, #34386a 80%, #5d4677 90%, #7d5276 100%) fixed;
+    color: #eef1ff; font: 14px/1.55 "Segoe UI", system-ui, -apple-system, "Helvetica Neue", sans-serif; }
+  .sky, .dawn, .sun, .hills { position: fixed; pointer-events: none; }
+  .sky { inset: 0; width: 100%; height: 100%; }
+  .sky .stars { fill: #fff; animation: fade 7s ease-out forwards; }
+  .sky .tw { animation: twinkle 3.2s ease-in-out infinite alternate; }
+  .sky .t2 { animation-delay: -0.8s; } .sky .t3 { animation-delay: -1.7s; } .sky .t4 { animation-delay: -2.5s; }
+  .sky .moon { animation: set 7s ease-out forwards; }
+  /* daybreak, across the sky from the moon: the sun comes up behind the hills and its glow spreads as the page opens */
+  .dawn { left: -10%; right: -10%; bottom: 0; height: 80%;
+    background: radial-gradient(ellipse 55% 60% at 30% 100%, rgba(255, 214, 140, .95), rgba(250, 158, 102, .72) 28%,
+      rgba(200, 110, 130, .36) 54%, rgba(110, 80, 140, 0) 78%);
+    animation: daybreak 7s ease-out forwards; }
+  .sun { left: 23%; bottom: 8vh; width: 96px; height: 96px; margin-left: -48px; border-radius: 50%;
+    background: radial-gradient(circle, #fff6d6 0 52%, #ffd08a 68%, rgba(255, 190, 120, 0) 71%);
+    box-shadow: 0 0 70px 34px rgba(255, 190, 115, .42); animation: rise 7s ease-out forwards; }
+  .hills { left: 0; right: 0; bottom: 0; width: 100%; height: 22vh; min-height: 90px; }
+  @keyframes daybreak { from { opacity: .15; transform: translateY(18%); } to { opacity: 1; transform: none; } }
+  @keyframes fade { to { opacity: .6; } }
+  @keyframes twinkle { from { opacity: .25; } to { opacity: 1; } }
+  @keyframes set { to { transform: translateY(14px); opacity: .8; } }
+  @keyframes rise { from { transform: translateY(70px); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .sky *, .dawn, .sun { animation: none !important; } }
+
+  main { position: relative; max-width: 540px; padding: 28px 30px 24px; border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 14px; background: rgba(8, 13, 36, .58); backdrop-filter: blur(8px); box-shadow: 0 18px 50px rgba(0, 0, 0, .35); }
+  main > img { display: block; width: 52px; height: 52px; margin-bottom: 14px; }
+  h1 { margin: 0 0 8px; font-size: 24px; line-height: 1.25; font-weight: 600; }
+  .lead { margin: 0 0 20px; color: #c9cfee; }
+  .go { display: inline-block; padding: 10px 22px; border-radius: 999px; font-weight: 600; text-decoration: none; color: #24183a;
+    background: linear-gradient(#ffd99a, #f6a774); box-shadow: 0 4px 18px rgba(246, 167, 116, .35); }
+  .go:hover { background: linear-gradient(#ffe3b0, #f8b285); }
+  a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .how { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .how li { padding: 10px 12px; border-radius: 8px; background: rgba(255, 255, 255, .06); }
+  .how b { display: block; margin-bottom: 2px; color: #ffd9a8; }
+  .note { margin: 14px 0 0; color: #aab2d8; font-size: 13px; }
+  .note a { color: #ffd9a8; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<svg class="sky" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <radialGradient id="halo"><stop offset="0" stop-color="#fff6d8" stop-opacity=".35"/><stop offset="1" stop-color="#fff6d8" stop-opacity="0"/></radialGradient>
+    <mask id="crescent"><circle cx="1270" cy="175" r="44" fill="#fff"/><circle cx="1289" cy="160" r="40" fill="#000"/></mask>
+  </defs>
+  <g class="stars"><circle cx="707" cy="408" r="0.6" opacity="0.93"/><circle cx="882" cy="223" r="1.2" opacity="0.62" class="tw t4"/><circle cx="1546" cy="259" r="0.8" opacity="0.39"/><circle cx="257" cy="618" r="1.2" opacity="0.93" class="tw t4"/><circle cx="1324" cy="13" r="1.0" opacity="0.74"/><circle cx="1170" cy="295" r="1.2" opacity="0.96"/><circle cx="212" cy="88" r="0.5" opacity="0.48" class="tw t3"/><circle cx="520" cy="433" r="0.6" opacity="0.92"/><circle cx="304" cy="80" r="0.9" opacity="0.55"/><circle cx="528" cy="229" r="0.5" opacity="0.55"/><circle cx="1025" cy="239" r="0.6" opacity="0.77"/><circle cx="782" cy="47" r="0.6" opacity="0.38" class="tw t1"/><circle cx="357" cy="43" r="0.6" opacity="0.38" class="tw t2"/><circle cx="1247" cy="294" r="0.9" opacity="0.79"/><circle cx="220" cy="296" r="0.6" opacity="0.92"/><circle cx="146" cy="317" r="0.5" opacity="0.64" class="tw t4"/><circle cx="611" cy="588" r="1.6" opacity="0.58"/><circle cx="229" cy="549" r="1.3" opacity="0.95"/><circle cx="995" cy="254" r="0.6" opacity="0.83"/><circle cx="1477" cy="54" r="1.0" opacity="0.75"/><circle cx="682" cy="272" r="1.7" opacity="0.45" class="tw t1"/><circle cx="1266" cy="54" r="0.5" opacity="0.39" class="tw t1"/><circle cx="745" cy="217" r="1.2" opacity="0.57"/><circle cx="800" cy="8" r="0.5" opacity="0.68"/><circle cx="334" cy="531" r="0.7" opacity="0.66"/><circle cx="793" cy="551" r="0.9" opacity="0.89"/><circle cx="1557" cy="340" r="0.6" opacity="0.52"/><circle cx="263" cy="513" r="0.6" opacity="0.55"/><circle cx="625" cy="39" r="1.2" opacity="0.41" class="tw t4"/><circle cx="197" cy="105" r="1.8" opacity="0.98"/><circle cx="761" cy="49" r="1.5" opacity="0.81"/><circle cx="357" cy="569" r="1.0" opacity="0.47"/><circle cx="1229" cy="313" r="1.4" opacity="0.75"/><circle cx="34" cy="409" r="0.5" opacity="0.59"/><circle cx="1227" cy="30" r="1.9" opacity="0.52"/><circle cx="1001" cy="507" r="0.8" opacity="0.37"/><circle cx="132" cy="232" r="1.5" opacity="0.79"/><circle cx="416" cy="625" r="0.9" opacity="0.54"/><circle cx="301" cy="39" r="0.8" opacity="0.76" class="tw t3"/><circle cx="1440" cy="481" r="0.8" opacity="0.98"/><circle cx="870" cy="542" r="1.3" opacity="0.66"/><circle cx="366" cy="331" r="0.5" opacity="0.82"/><circle cx="1414" cy="78" r="0.6" opacity="0.41"/><circle cx="1058" cy="98" r="0.7" opacity="0.36"/><circle cx="1222" cy="33" r="0.5" opacity="0.56" class="tw t2"/><circle cx="904" cy="56" r="0.5" opacity="0.71"/><circle cx="288" cy="175" r="0.6" opacity="0.40"/><circle cx="58" cy="339" r="1.8" opacity="0.73"/><circle cx="1006" cy="548" r="0.8" opacity="0.83"/><circle cx="546" cy="160" r="1.0" opacity="0.68"/><circle cx="785" cy="92" r="0.6" opacity="0.45" class="tw t4"/><circle cx="82" cy="188" r="0.7" opacity="0.73"/><circle cx="345" cy="88" r="1.4" opacity="0.92"/><circle cx="278" cy="62" r="0.7" opacity="0.63" class="tw t1"/><circle cx="358" cy="604" r="0.9" opacity="0.55"/><circle cx="994" cy="435" r="0.8" opacity="0.83"/><circle cx="1467" cy="6" r="1.4" opacity="0.43"/><circle cx="1202" cy="48" r="0.7" opacity="0.59" class="tw t1"/><circle cx="985" cy="351" r="0.7" opacity="0.62"/><circle cx="960" cy="92" r="1.4" opacity="0.90"/><circle cx="1587" cy="276" r="1.1" opacity="0.43"/><circle cx="182" cy="86" r="0.5" opacity="0.70" class="tw t4"/><circle cx="62" cy="88" r="0.8" opacity="0.90"/><circle cx="62" cy="201" r="0.7" opacity="0.89"/><circle cx="635" cy="25" r="0.5" opacity="0.42" class="tw t1"/><circle cx="1060" cy="300" r="0.6" opacity="0.65" class="tw t3"/><circle cx="866" cy="42" r="0.5" opacity="0.62"/><circle cx="979" cy="438" r="1.0" opacity="0.72"/><circle cx="1204" cy="291" r="1.9" opacity="0.47"/><circle cx="176" cy="0" r="0.8" opacity="0.77"/><circle cx="1109" cy="31" r="0.5" opacity="0.80"/><circle cx="676" cy="228" r="1.0" opacity="0.68"/><circle cx="1112" cy="562" r="0.5" opacity="0.98"/><circle cx="971" cy="599" r="0.9" opacity="0.75" class="tw t2"/><circle cx="786" cy="559" r="0.9" opacity="0.66"/><circle cx="213" cy="593" r="0.5" opacity="0.63"/><circle cx="1097" cy="403" r="0.6" opacity="0.77" class="tw t3"/><circle cx="122" cy="558" r="1.2" opacity="0.57" class="tw t3"/><circle cx="362" cy="210" r="1.0" opacity="0.98"/><circle cx="300" cy="615" r="0.7" opacity="0.79"/><circle cx="1418" cy="505" r="1.4" opacity="0.75"/><circle cx="245" cy="63" r="0.8" opacity="0.93"/><circle cx="894" cy="183" r="1.4" opacity="0.71"/><circle cx="1348" cy="599" r="0.6" opacity="0.69"/><circle cx="1479" cy="387" r="1.1" opacity="0.85"/><circle cx="1414" cy="86" r="0.7" opacity="0.61" class="tw t3"/><circle cx="470" cy="3" r="1.4" opacity="0.58"/><circle cx="430" cy="1" r="0.9" opacity="0.41" class="tw t1"/><circle cx="1424" cy="141" r="0.8" opacity="0.98"/><circle cx="652" cy="416" r="0.5" opacity="0.48"/><circle cx="1422" cy="630" r="0.8" opacity="0.63"/><circle cx="761" cy="477" r="0.6" opacity="0.94" class="tw t2"/><circle cx="575" cy="382" r="1.2" opacity="0.70"/><circle cx="1546" cy="404" r="0.6" opacity="0.57"/><circle cx="1508" cy="181" r="0.6" opacity="0.72"/><circle cx="1534" cy="443" r="1.5" opacity="0.94"/><circle cx="436" cy="513" r="0.5" opacity="0.44" class="tw t1"/><circle cx="161" cy="556" r="0.8" opacity="0.57"/><circle cx="60" cy="263" r="0.5" opacity="0.61" class="tw t4"/><circle cx="686" cy="372" r="0.6" opacity="0.44"/><circle cx="1258" cy="571" r="0.5" opacity="0.45"/><circle cx="1554" cy="623" r="0.6" opacity="0.74"/><circle cx="731" cy="239" r="1.1" opacity="0.56"/><circle cx="32" cy="234" r="0.5" opacity="0.60"/></g>
+  <g class="moon"><circle cx="1270" cy="175" r="130" fill="url(#halo)"/><circle cx="1270" cy="175" r="44" fill="#fdf3cf" mask="url(#crescent)"/></g>
+</svg>
+<div class="dawn" aria-hidden="true"></div>
+<div class="sun" aria-hidden="true"></div>
+<svg class="hills" viewBox="0 0 1600 200" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 120 C160 70 300 80 430 110 S700 160 860 112 S1150 52 1320 92 S1520 128 1600 100 V200 H0Z" fill="#141a3d"/>
+  <path d="M0 160 C200 118 380 128 560 150 S900 182 1080 146 S1400 112 1600 140 V200 H0Z" fill="#0a0e26"/>
+</svg>
+<main>
+  <img src="../icons/icon.svg" alt="">
+  <h1>A new version of VibeOffice is here</h1>
+  <p class="lead" data-for="windows macos all">Every version of the desktop app is published on GitHub. Download the newest one there.</p>
+  <a class="go" data-for="windows macos all" href="https://github.com/tcchen2026/VibeOffice/releases/latest">Get the latest version on GitHub</a>
+  <p class="lead" data-for="linux" hidden>VibeOffice for Linux has no download yet: build the new version from its source on GitHub, or use VibeOffice in your browser, which is always the newest.</p>
+  <a class="go" data-for="linux" hidden href="https://github.com/tcchen2026/VibeOffice">Get the source on GitHub</a>
+  <p class="lead" data-for="web" hidden>VibeOffice in your browser updates itself: open it again, or reload the page, to get the newest version.</p>
+  <a class="go" data-for="web" hidden href="../">Open VibeOffice</a>
+  <p class="lead" data-for="macos_store" hidden>VibeOffice from the Mac App Store is updated by the App Store: open the App Store, choose Updates, then Update next to VibeOffice. If it isn't listed there, you have the newest version.</p>
+  <ul class="how" data-for="windows macos all">
+    <li data-for="windows all"><b translate="no">Windows</b>Close VibeOffice, then download VibeOffice-Windows-x64.zip, open it, run VibeOfficeSetup.exe and choose Update.</li>
+    <li data-for="macos all"><b translate="no">macOS</b>Quit VibeOffice, then download VibeOffice-macOS.dmg, open it and drag VibeOffice into Applications, replacing the one there.</li>
+    <li data-for="all"><b translate="no">Linux</b>No download yet: build the new version from its source on GitHub, or use VibeOffice in your browser.</li>
+  </ul>
+  <p class="note" data-for="macos all">Installed from the Mac App Store? The App Store updates it for you.</p>
+  <p class="note" data-for="windows macos linux all">Using VibeOffice in your browser? It updates itself when you reload the page. <a href="../">Open VibeOffice</a></p>
+</main>
+<script src="updater.js"></script>
+</body>
+</html>

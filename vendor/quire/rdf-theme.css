@@ -1,0 +1,10 @@
+@import url("../common/rdf-theme.css");
+
+/* Keep two compact rows; narrow frames scroll rather than shrink controls. */
+.menurow { gap: 8px; }
+.menurow > .toolbar { flex: none; max-width: none; }
+.menurow > .menubar { margin-inline: 0; }
+.rdf-format-row { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.rdf-format-row > .toolbar { flex: none; max-width: none; }
+.rdf-format-row > #tb-standardRight { margin-left: auto; }
+.app.reading .cmdbars .toolbars > .rdf-format-row { display: flex; }

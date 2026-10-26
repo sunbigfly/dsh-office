@@ -1,0 +1,25 @@
+/* RDF's fixed Paper/menu layout, with DSH actions in the existing menu row. */
+#feedback,.helpbox,.cmd-search{display:none!important}
+#menurow{display:flex;align-items:center;flex-wrap:nowrap;min-width:0;gap:4px}
+#menurow>.menubar{flex:none;min-width:0;margin-inline:0}
+#menurow>.toolbar{flex:1;min-width:0;max-width:none;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+.rdf-format-row,.drawrow{min-width:0;overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap;scrollbar-width:thin;scrollbar-color:#b4bac1 transparent}
+.rdf-format-row>.toolbar,.drawrow>.toolbar{flex:none;max-width:none}
+.rdf-format-row::-webkit-scrollbar,.drawrow::-webkit-scrollbar{display:block;height:6px}
+.rdf-format-row::-webkit-scrollbar-thumb,.drawrow::-webkit-scrollbar-thumb{background:#b4bac1;border-radius:3px}
+.rdf-format-row:focus-visible,.drawrow:focus-visible{outline:2px solid #316ac5;outline-offset:-2px}
+.dsh-office-controls{display:flex;align-items:center;flex:none;gap:6px;margin-left:auto;padding:0 5px}
+.dsh-office-controls button{display:inline-flex;align-items:center;justify-content:center;min-height:22px;padding:2px 7px;border:1px solid var(--tb-border,#d4d4d4);border-radius:3px;background:var(--tb-bg,#fff);color:var(--pane-ink,#252525);font:inherit;line-height:1.35;white-space:nowrap;cursor:pointer}
+.dsh-office-controls button:hover{background:var(--hover,#edf4f4)}
+.dsh-office-controls button:focus-visible{outline:2px solid #316ac5;outline-offset:2px}
+.dsh-office-controls button:disabled{opacity:.45;cursor:default}
+.dsh-office-controls button[hidden]{display:none}
+.dsh-office-controls .dsh-office-save{background:var(--accent,#176d72);color:#fff;border-color:transparent}
+.dsh-office-state{min-width:0;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;color:var(--muted,#666)}
+.dsh-office-state[role=alert]{color:#ad2525}
+.dsh-office-readonly [contenteditable]{-webkit-user-modify:read-only!important}
+@media(max-width:720px){.dsh-office-state{max-width:85px}.dsh-office-controls{gap:4px}}
+@media(max-width:520px){.dsh-office-state{display:none}.dsh-office-controls{padding:0 3px}.dsh-office-controls button{padding:2px 4px;font-size:11px}}
+/* Quire collapses these grid tracks at this breakpoint; hide their canvases
+   and borders as well, so no clipped ruler remains along the left edge. */
+@media(max-width:640px){:root[data-app=quire] #hruler,:root[data-app=quire] #vruler,:root[data-app=quire] #rcorner{display:none!important}}

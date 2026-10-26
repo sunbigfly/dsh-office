@@ -1,0 +1,13 @@
+@import url("../common/rdf-theme.css");
+
+:root { --work: #f1f3f4; }
+.leftpane, .lp-tabs, .lp-tab, .ruler, .notes { border-color: var(--tb-border); }
+.lp-tabs, .lp-tab { background: #f1f3f4; }
+.lp-tab { border-radius: 0; }
+.lp-tab.on { background: #fff; color: #1a73e8; }
+.th.cur .th-frame, .so-it.sel .so-frame { outline-color: #4285f4; border-color: #4285f4; }
+.th.sel:not(.cur) .th-frame { outline-color: #a8c7fa; }
+.ed-host, .np-page { box-shadow: 0 0 0 1px #dadce0, 0 2px 6px #3c404326; }
+.preview { background: var(--work); }
+.list-box .li-group { background: #f1f3f4; color: var(--ink); }
+.sb-zoom input[type=range] { accent-color: #4285f4; }

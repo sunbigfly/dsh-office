@@ -1,0 +1,28 @@
+{
+  "source": "portal_unified RDF Office display configuration",
+  "files": {
+    "common/ui.js": "3153cd9dc815d3997b0efe58c48d02c641fffcb226558ef38597ca271ef64da0",
+    "common/lang.js": "a10a8638e988b44ac5d993b10f0fb44759a9b0f8dcb980a20f4da93d8ddeee0c",
+    "common/office-fonts.js": "fc76f2cd6b077034cb357088f4a3667160512e51ba554e3ff5a50bf75156719f",
+    "common/rdf-theme.css": "f56b913c47965d3fdd13a43e9e42dc7b55743bd54592965539d564a3e0520432",
+    "quire/js/app.js": "cac3010ca0b8764835dda6aee1e23cb4f31a00d246e51b7dac19911fdbec4653",
+    "quire/js/commands.js": "21151819c565c76307e88f874aa10fb3ca4de045d3807fcbb08df497ef1ba20f",
+    "quire/rdf-theme.css": "f8730a34002ab3005e6a8dd3cc072a1c5030677c687e20947333ea51d0f4e55a",
+    "ledger/js/app.js": "441b9313bb523c587483a8d599de1da4b57b01f15300d51d8a8d8369117e4d59",
+    "ledger/js/commands.js": "613b1873219bf843c23d52b4a44d7b3ba69cb5bd401fac9a697e99e3eb869e3a",
+    "ledger/rdf-theme.css": "edaa243f0a2ef6c0989eb305e9e1b9fb5e552c1be7b96705323a3976b5cbcde9",
+    "lectern/js/app.js": "bd476a3926d1847d24a8a118c16cdb73d279ef106d10ebf74bf2c9f2372d0927",
+    "lectern/js/commands.js": "85e5c5342e1ef492187ae9cc76b6e0d0d609ab94271f5fa68cc5e535cf25f45b",
+    "lectern/js/editor.js": "5f341a15bad40a0424a443a62a3e4c6263af24ddc00ced22d097766d8d181158",
+    "lectern/rdf-theme.css": "77874b94ac08b11292404de16f8a8163069a48e964ec303c1950c0f423d3a2f3"
+  },
+  "settings": [
+    "compact menu and toolbars",
+    "closed startup task panes",
+    "Simplified Chinese default",
+    "searchable font choices and common font ordering",
+    "RDF Paper palette",
+    "PowerPoint Fit rounding correction"
+  ],
+  "boundary": "DSH retains its own authenticated file transport and opaque iframe; RDF accounts, storage and API bridge are not included."
+}

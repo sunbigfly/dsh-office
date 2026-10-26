@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x2="1200" y2="360" gradientUnits="userSpaceOnUse"><stop stop-color="#F4F6FF"/><stop offset="1" stop-color="#F4FAF9"/></linearGradient>
+    <linearGradient id="page" x1="32" y1="28" x2="88" y2="102" gradientUnits="userSpaceOnUse"><stop stop-color="#9CC9FF"/><stop offset=".52" stop-color="#7BA6F4"/><stop offset="1" stop-color="#7770E8"/></linearGradient>
+    <linearGradient id="fold" x1="73" y1="28" x2="90" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#D4E6FF"/><stop offset="1" stop-color="#A6BCFA"/></linearGradient>
+  </defs>
+  <rect x="1" y="1" width="1198" height="358" rx="28" fill="url(#bg)" stroke="#E3E8F2" stroke-width="2"/>
+  <path d="m1010 59 124 72v144l-124 72-124-72V131Z" stroke="#C6D8ED" stroke-opacity=".3" stroke-width="2"/>
+  <path d="m1091-23 124 72v144l-124 72-124-72V49Z" stroke="#BBDDD6" stroke-opacity=".3" stroke-width="2"/>
+  <g transform="translate(62 75) scale(1.65)">
+    <path fill-rule="evenodd" d="M45 28H73L96 51V83C96 93.493 87.493 102 77 102H45C34.507 102 26 93.493 26 83V47C26 36.507 34.507 28 45 28ZM50 46H72A7 7 0 0 1 79 53V78A7 7 0 0 1 72 85H50A7 7 0 0 1 43 78V53A7 7 0 0 1 50 46Z" fill="url(#page)"/>
+    <path d="M73 28V42C73 46.971 77.029 51 82 51H96L73 28Z" fill="url(#fold)"/>
+  </g>
+  <g font-family="Inter,Arial,'Microsoft YaHei','Noto Sans CJK SC',sans-serif">
+    <text x="302" y="134" fill="#202B42" font-size="57" font-weight="750" letter-spacing="-1.8">DSH Office</text>
+    <text x="305" y="182" fill="#627189" font-size="23">在工作区直接预览、编辑和保存文档</text>
+    <rect x="305" y="218" width="112" height="36" rx="10" fill="#E9EAFE"/><text x="337" y="242" fill="#4E4CCD" font-size="16" font-weight="600">Word</text>
+    <rect x="427" y="218" width="112" height="36" rx="10" fill="#DFF5EF"/><text x="457" y="242" fill="#168D7D" font-size="16" font-weight="600">Excel</text>
+    <rect x="549" y="218" width="158" height="36" rx="10" fill="#FFF0E6"/><text x="570" y="242" fill="#C66B40" font-size="16" font-weight="600">PowerPoint</text>
+    <text x="305" y="297" fill="#8A97AA" font-size="15" letter-spacing=".5">一个独立插件 · 沿用 DSH 文件访问权限</text>
+  </g>
+</svg>
